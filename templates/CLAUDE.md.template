@@ -1,0 +1,20 @@
+# [Project name]: brief for Claude Code
+
+## What this is
+[Two or three sentences: the problem, the user, the scope decision.]
+
+## Rules that never bend
+- [For example: label anything simulated as sample data.]
+- [For example: no secrets or personal data in the repo.]
+
+## Commands
+- Tests: `[command]`
+- Run: `[command]`
+
+## Workflow (builder-project)
+- Stage list and gates: run `/builder-project`.
+- Hooks installed: stage-start, dangerous-git block, pre-commit nudge, pre-PR block, pre-merge block, post-merge nudge. Do not ask again which hooks to install.
+- Review gates: `docs/review-gates.md`. Ask the user before running ui-reviewer, ux-reviewer or design-reviewer.
+
+## UI consistency (if the project has a UI)
+[Components to reuse, for example one Dialog, one tooltip, button classes.]

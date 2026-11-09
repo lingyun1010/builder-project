@@ -1,0 +1,6 @@
+{
+  "tests": [
+    { "name": "unit", "match": "npm (run )?test", "run": "npm test" }
+  ],
+  "evidence_word": "smoke"
+}
