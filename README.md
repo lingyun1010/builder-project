@@ -32,6 +32,19 @@ Then edit two files:
 
 Start a Claude Code session and type `/builder-project`.
 
+## Where the skills come from
+
+builder-project is my own work. The skills it points to are not mine and are not copied here.
+
+| Provider | GitHub | Licence | What |
+| --- | --- | --- | --- |
+| Matt Pocock | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | Most stage skills: `research`, `grill-with-docs`, `wayfinder`, `to-spec`, `to-tickets`, `tdd`, `codebase-design`, `diagnosing-bugs`, `prototype`, `code-review`, `pr`, `handoff` and more |
+| Paul Bakaus | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Apache-2.0 | Optional design critique and UI detector |
+| Claude Code (Anthropic) | built in, no repo | n/a | `simplify`, `security-review` |
+| lingyun1010 | this repo | MIT | `builder-project` |
+
+The full list by stage, with install commands, is in [docs/skills-i-use.md](docs/skills-i-use.md).
+
 ## Honest limits
 
 - **Nudges are advice**: the agent may skip them. **Blocks are enforced** inside Claude Code. **CI on the pull request** is the only check that does not depend on the session. Turn on required checks if your plan allows it.
@@ -43,6 +56,10 @@ Start a Claude Code session and type `/builder-project`.
 ## Origin
 
 Built over two days for the City of Parramatta hackathon (a drain-blockage planner). The project ran with these hooks, four review agents and 28 tickets. The hooks and agents here are generalised from that project: test commands and flow details moved into config files.
+
+## The talk
+
+Slides for "How a Vibe Coder Becomes a Builder", which walks through this setup with DrainWise as the case study: https://claude.ai/artifact/PfJHdJ1T6fu4gtGPB9Fy2M
 
 ## Licence
 
