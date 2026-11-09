@@ -1,0 +1,49 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/block-dangerous-git.sh\"" }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/pre-commit-nudge.sh\"", "if": "Bash(git commit*)" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/pre-pr-create.sh\"", "if": "Bash(gh pr create*)" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/pre-merge.sh\"", "if": "Bash(gh pr merge*)" }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/stage-start.sh\"" }
+        ]
+      },
+      {
+        "matcher": "startup|clear",
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/load-handoff.mjs\" 2>/dev/null || true", "timeout": 10 }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/context-check.mjs\" 2>/dev/null || true", "timeout": 10 }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/record-tests.sh\"" },
+          { "type": "command", "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/post-merge.sh\"", "if": "Bash(gh pr merge*)" }
+        ]
+      }
+    ]
+  }
+}

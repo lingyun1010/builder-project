@@ -1,0 +1,14 @@
+{
+  "name": "builder-project",
+  "owner": {
+    "name": "lingyun1010"
+  },
+  "plugins": [
+    {
+      "name": "builder-project",
+      "source": "./",
+      "description": "Stage skill, guard hooks, context check with handoff, and review agents for building with Claude Code."
+    }
+  ],
+  "description": "Workflow kit for building with Claude Code."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "builder-project",
+  "version": "0.2.0",
+  "description": "A stage-by-stage workflow for building with Claude Code: stage skill, git/PR/merge guard hooks, context check with handoff, and four read-only review agents.",
+  "author": { "name": "lingyun1010" },
+  "homepage": "https://github.com/lingyun1010/builder-project",
+  "repository": "https://github.com/lingyun1010/builder-project",
+  "license": "MIT"
+}

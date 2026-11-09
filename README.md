@@ -22,6 +22,19 @@ These two are my own small scripts. The skill name `handoff` also exists in matt
 
 ## Install
 
+Two ways. Pick one, not both: using both runs every hook twice.
+
+**A. As a Claude Code plugin** (one command, updates with `/plugin update`):
+
+```bash
+/plugin marketplace add lingyun1010/builder-project
+/plugin install builder-project@builder-project
+```
+
+The skills are then named `/builder-project:builder-project` and `/builder-project:handoff`. Hook files live in the plugin cache, so you cannot edit them per project; copy `templates/builder.json` to `.claude/builder.json` in your project and edit your test commands there. The optional session-title reminder is not in the plugin (it needs the desktop app); use route B for that.
+
+**B. As files copied into one project** (editable, committed with your repo):
+
 Needs `bash`, `python3` and the GitHub CLI (`gh`). Read the hook scripts first: they run shell commands on your machine.
 
 ```bash
