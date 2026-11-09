@@ -36,7 +36,7 @@ Start a Claude Code session and type `/builder-project`.
 
 - **Nudges are advice**: the agent may skip them. **Blocks are enforced** inside Claude Code. **CI on the pull request** is the only check that does not depend on the session. Turn on required checks if your plan allows it.
 - The merge gate checks that the PR body contains your evidence word, not that the evidence is good. Read it.
-- It orchestrates other skills (`research`, `tdd`, `wayfinder` and more) but does not bundle them. See [docs/dependencies.md](docs/dependencies.md) for what to use at each stage and a plain fallback if you lack it.
+- It orchestrates other skills (`research`, `tdd`, `wayfinder` and more) but does not bundle them. See [docs/skills-i-use.md](docs/skills-i-use.md) for the skills I use at each stage, where to get them and their licences, and [docs/dependencies.md](docs/dependencies.md) for a plain fallback if you lack one.
 - The review agents use browser tools from the Claude desktop app. Elsewhere, edit the `tools:` line.
 - Tested on macOS with Claude Code. Not tested on Windows.
 

@@ -1,6 +1,6 @@
 # Dependencies and fallbacks
 
-builder-project only orchestrates. It does not bundle other people's skills. For each stage, here is what to use and what to do if you do not have it. Check each skill's own licence and install instructions before use.
+builder-project only orchestrates. It does not bundle other people's skills. For each stage, here is what to use and what to do if you do not have it. Sources, licences and install commands are in [skills-i-use.md](skills-i-use.md). Check each skill's own licence and install instructions before use.
 
 | Stage | Skill | If you do not have it |
 | --- | --- | --- |
