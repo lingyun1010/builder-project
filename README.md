@@ -9,9 +9,16 @@ It came from building [DrainWise](#origin), a hackathon project, and the talk "H
 | Part | What it does |
 | --- | --- |
 | `/builder-project` skill | Names your current stage (1 Init to 9 Post-merge), says which skill to use now, and refuses to move on while a gate is red. Includes a "which skill when" table. |
-| `hooks/` | Block dangerous git commands; block `gh pr create` until your tests passed this session; block `gh pr merge` unless CI is green and the PR body has evidence; nudge you before commits and after merges. |
+| `hooks/` | Block dangerous git commands; block `gh pr create` until your tests passed this session; block `gh pr merge` unless CI is green and the PR body has evidence; nudge you before commits and after merges. Also: warn when the context window gets large and offer a handoff; load `.claude/handoff.md` into the next session; optionally remind Claude to name each session. |
 | `agents/` | Four read-only reviewers: `smoke-tester`, `ui-reviewer`, `ux-reviewer`, `design-reviewer`. |
 | `templates/` | `builder.json` (your test commands), `review-gates.md`, `CLAUDE.md`, `handoff.md`. |
+
+## Two small habits worth stealing
+
+- **Context check + handoff.** `context-check.mjs` reads token usage from the session transcript. Past 150k tokens it tells you and asks Claude to offer `/handoff`; `/handoff` saves state to `.claude/handoff.md` (gitignored); `load-handoff.mjs` loads it into the next window. Long sessions get slow and expensive, and this makes the restart cheap.
+- **Session titles.** `session-title-reminder.mjs` (optional, Claude desktop app only) reminds Claude to name the session until it has. Install with `./install.sh --with-session-title /path/to/project`.
+
+These two are my own small scripts. The skill name `handoff` also exists in mattpocock/skills; this kit ships its own version so the hook and skill match.
 
 ## Install
 

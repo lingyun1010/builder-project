@@ -59,5 +59,10 @@ Run `install.sh` from this kit, or ask the user which hooks to install and add t
 | pre-pr-create | `gh pr create` | block unless the tests in `builder.json` passed this session |
 | pre-merge | `gh pr merge` | block unless CI is green and the PR body has the evidence word |
 | post-merge | after `gh pr merge` | nudge: re-run tests, update the map |
+| context-check | UserPromptSubmit | nudge: at 150k tokens (then every +50k) tell the user and offer `/handoff` and a new window. Tune with `CONTEXT_WARN_TOKENS` and `CONTEXT_WARN_STEP` |
+| load-handoff | SessionStart (startup, clear) | injects `STATUS.md` and `.claude/handoff.md` so a new window continues where the last stopped |
+| session-title-reminder (optional) | UserPromptSubmit | nudge: until the session has a title, remind Claude to call `set_session_title`. Desktop app only; install with `--with-session-title` |
+
+`/handoff` (this kit's `skills/handoff`) is the other half of context-check: it routes durable decisions to docs, then writes `.claude/handoff.md`.
 
 Say plainly after installing: nudges are advice the agent may skip, blocks are enforced, and CI on the PR is the only enforcement that does not depend on this session. Record the choice in CLAUDE.md so the next session does not ask again.

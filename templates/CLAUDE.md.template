@@ -16,5 +16,9 @@
 - Hooks installed: stage-start, dangerous-git block, pre-commit nudge, pre-PR block, pre-merge block, post-merge nudge. Do not ask again which hooks to install.
 - Review gates: `docs/review-gates.md`. Ask the user before running ui-reviewer, ux-reviewer or design-reviewer.
 
+## Sessions
+- Give every session a meaningful title as soon as the task is clear (one session per independent task or PR).
+- When the context-size hook warns, offer a handoff (`.claude/handoff.md`) and a new window.
+
 ## UI consistency (if the project has a UI)
 [Components to reuse, for example one Dialog, one tooltip, button classes.]
